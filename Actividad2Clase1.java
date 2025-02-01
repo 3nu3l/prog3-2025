@@ -3,6 +3,7 @@ public class Actividad2Clase1 {
         int edad = 24;
         double altura = 1.75;
         char inicial = 'J';
+        @SuppressWarnings("unused")
         String ciudad = "Ciudad de Buenos Aires";
 
         int sumaEdad = edad + 5;
