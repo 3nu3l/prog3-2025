@@ -1,0 +1,65 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class ejercicio2 {
+    public static void main(String[] args) {
+        System.out.println("Ejercicio 2 | Guia 4");
+
+        int[] randomNumbers = new int[10];
+        //int max1,max2;
+        Random rand = new Random();
+        
+        for (int i = 0; i < randomNumbers.length; i++) {
+            randomNumbers[i] = rand.nextInt(100); // Lleno el arrya al azar de 0 a 99, lo hice así para que cambie cada vez que se ejecute
+        }
+        
+        ordenar(randomNumbers);
+    
+        System.out.println();
+        for (int num : randomNumbers) {
+            System.out.print(num+" ");
+        }
+
+       int[] resultado = encontrarDosMaximos(randomNumbers, randomNumbers[0], randomNumbers.length - 1);
+
+       for (int r : resultado) {
+        System.out.println(r+" - ");
+        }
+
+    }
+        public static int [] ordenar(int[] numeros) {
+            Arrays.sort(numeros);
+            return numeros;
+        }
+
+      public static int[] encontrarDosMaximos(int[] numeros, int izquierda, int derecha) { 
+         /* if (izquierda == derecha) {
+            return new int[]{numeros[izquierda], Integer.MIN_VALUE};
+        } */
+
+        int medio = izquierda + (derecha - izquierda) / 2;
+
+        // Recursión en ambas mitades
+        int[] maxIzquierda = encontrarDosMaximos(numeros, izquierda, medio);
+        int[] maxDerecha = encontrarDosMaximos(numeros, medio + 1, derecha);
+
+        // Fusionar los resultados para obtener los dos valores más grandes
+        return fusionarMaximos(maxIzquierda, maxDerecha);
+      } 
+
+      private static int[] fusionarMaximos(int[] maxIzq, int[] maxDer) {
+        int[] resultado = new int[2];
+
+        resultado[0] = Math.max(maxIzq[0], maxDer[0]); // El mayor de todos
+
+        // Determinar el segundo mayor entre los restantes
+        if (resultado[0] == maxIzq[0]) {
+            resultado[1] = Math.max(maxIzq[1], maxDer[0]);
+        } else {
+            resultado[1] = Math.max(maxIzq[0], maxDer[1]);
+        }
+
+        return resultado;
+    }
+
+    }
