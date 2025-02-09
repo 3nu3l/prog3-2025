@@ -1,0 +1,21 @@
+//Actividad 1
+Fuerza Bruta
+Combinaciones posibles:
+
+No incluir ningún objeto: Valor = 0, Peso = 0.
+Incluir solo el Objeto 1: Valor = 4, Peso = 3.
+Incluir solo el Objeto 2: Valor = 5, Peso = 4.
+Incluir solo el Objeto 3: Valor = 3, Peso = 2.
+Incluir el Objeto 1 y Objeto 2: Valor = 9, Peso = 7 (no válido).
+Incluir el Objeto 1 y Objeto 3: Valor = 7, Peso = 5.
+Incluir el Objeto 2 y Objeto 3: Valor = 8, Peso = 6.
+Incluir los tres objetos: Valor = 12, Peso = 9 (No válido).
+Solución: La combinación que maximiza el valor sin exceder el peso es incluir los objetos 2 y 3. Valor = 8, Peso = 6.
+
+
+Programación dinámica:
+	0	1	2	3	4	5	6
+0	0	0	0	0	0	0	0
+1	0	0	0	4	4	4	4
+2	0	0	0	4	5	5	5
+3	0	0	3	4	5	7	8

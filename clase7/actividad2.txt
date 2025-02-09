@@ -1,0 +1,31 @@
+Fuerza Bruta
+Combinaciones posibles:
+No incluir ningún objeto: Peso = 0, Valor = 0.
+Incluir solo el objeto 1: Peso = 2, Valor = 4.
+Incluir solo el objeto 2: Peso = 5, Valor = 2.
+Incluir solo el objeto 3: Peso = 6, Valor = 1.
+Incluir solo el objeto 4: Peso = 7, Valor = 6.
+Incluir objetos 1 y 2: Peso = 7, Valor = 6.
+Incluir objetos 1 y 3: Peso = 8, Valor = 5.
+Incluir objetos 1 y 4: Peso = 9, Valor = 10.
+Incluir objetos 2 y 3: Peso = 11 (Excede el peso).
+Incluir objetos 2 y 4: Peso = 12 (Excede el peso).
+Incluir objetos 3 y 4: Peso = 13 (Excede el peso).
+Incluir objetos 1, 2 y 3: Peso = 13 (Excede el peso).
+Incluir objetos 1, 2 y 4: Peso = 14 (Excede el peso).
+Incluir todos los objetos: Peso = 20 (Excede el peso).
+Resultado fuerza bruta:
+La mejor combinación válida es incluir los objetos 1 y 4 con:
+
+Peso total: 9
+Valor total: 10
+
+Tabla Dinámica - Problema De La Mochila
+
+
+	2	3	4	5	6	7	8	9
+0	0	0	0	0	0	0	0	0
+1	4	4	4	4	4	4	4	4
+2	4	4	4	4	4	6	6	6
+3	4	4	4	4	4	6	6	6
+4	4	4	4	4	4	6	6	10
