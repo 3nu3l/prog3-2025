@@ -1,15 +1,4 @@
-# prog3-2025
-Repositorio para los ejercicios y actividades de Programación 3 >> Ariel Silvestre
-  _____                           ____  
- |  __ \                         |___ \ 
- | |__) | __ ___   __ _ _ __ __ _  __) |
- |  ___/ '__/ _ \ / _` | '__/ _` ||__ < 
- | |   | | | (_) | (_| | | | (_| |___) |
- |_|   |_|_ \___/ \__, |_|  \__,_|____/ 
- \ \    / /        __/ |                
-  \ \  / /__ _ __ |___/_ __   ___       
-   \ \/ / _ \ '__/ _` | '_ \ / _ \      
-    \  /  __/ | | (_| | | | | (_) |     
-     \/ \___|_|  \__,_|_| |_|\___/      
-                                        
-                                        
+# Repositorio para actividades de Programación III | Intensivo Verano	
+## Grupo 6
+
+**Alumno**: Ariel Silvestre (1177257)
