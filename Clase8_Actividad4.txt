@@ -1,0 +1,31 @@
+
+Actividad 4
+
+Búsqueda de Aplicaciones Reales de Floyd-Warshall
+Usar Connected Papers, Google Scholar o bases de datos académicas para
+buscar artículos donde se aplique Floyd-Warshall.
+Leer el resumen o la introducción del artículo y extraer:
+¿En qué contexto se usa? (ej., redes de telecomunicaciones, logística,
+bioinformática)
+Escribir una síntesis breve en 3-5 líneas.
+Mini exposición por grupo y debate
+
+
+
+
+Redes de Telecomunicaciones:
+
+Contexto: El algoritmo de Floyd-Warshall se utiliza para optimizar el enrutamiento en redes de telecomunicaciones. Ayuda a encontrar las rutas más cortas entre todos los pares de nodos en una red, lo que es crucial para la eficiencia y la calidad del servicio1.
+Síntesis: En redes de telecomunicaciones, el algoritmo de Floyd-Warshall se aplica para determinar las rutas más eficientes entre múltiples nodos, mejorando la transmisión de datos y reduciendo la latencia.
+
+
+Logística y Transporte:
+
+Contexto: En la planificación de rutas de transporte y logística, el algoritmo se utiliza para minimizar los tiempos de viaje y los costos operativos. Es especialmente útil en sistemas de transporte público y redes de distribución2.
+Síntesis: En logística, el algoritmo de Floyd-Warshall se emplea para optimizar las rutas de entrega y transporte, asegurando que los bienes se muevan de manera eficiente entre múltiples centros de distribución.
+
+
+Bioinformática:
+
+Contexto: En bioinformática, el algoritmo se utiliza para analizar redes de interacción de proteínas y otras redes biológicas. Ayuda a identificar las rutas más cortas y las conexiones críticas dentro de estas redes3.
+Síntesis: En bioinformática, el algoritmo de Floyd-Warshall se aplica para estudiar redes de interacción de proteínas, facilitando la identificación de rutas críticas y la comprensión de la estructura de las redes biológicas.
