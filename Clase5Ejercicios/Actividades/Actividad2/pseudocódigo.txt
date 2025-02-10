@@ -1,0 +1,26 @@
+Actividad 2: Cambio de Moneda Extranjera con 
+Múltiples Tipos de Comprobantes
+Descripción del Problema:
+Un sistema de tesorería tiene a disposición una variedad de comprobantes que 
+incluyen monedas, cheques, bonos y otros documentos financieros. Cada 
+comprobante tiene un valor específico. El objetivo es realizar una compra de 
+moneda extranjera minimizando el número de comprobantes utilizados.
+Resolver mediante pseudocódigo e implementación java.
+Indicar la complejidad algorítmica
+
+
+Función encontrarComprobantesParaCambio(monto, comprobantes)
+    Ordenar comprobantes en orden descendente
+    listaCambio ← lista vacía
+
+    Para cada comprobante en comprobantes ordenados
+        Mientras monto >= comprobante
+            Agregar comprobante a listaCambio
+            Restar comprobante del monto
+
+    Si monto == 0
+        Retornar listaCambio
+    Sino
+        Lanzar excepción "No es posible completar el cambio"
+
+Fin Función
