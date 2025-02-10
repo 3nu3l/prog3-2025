@@ -1,0 +1,15 @@
+El algoritmo de Floyd-Warshall se utiliza en diversos campos para resolver problemas de caminos mínimos en grafos ponderados. A continuación, se presentan algunas aplicaciones destacadas:
+
+Redes de Telecomunicaciones: En el diseño y gestión de redes de telecomunicaciones, el algoritmo es esencial para optimizar la transferencia de datos y las rutas de enrutamiento, reduciendo la latencia y mejorando el rendimiento general de la red. 
+STUDYSMARTER.ES
+
+Diseño de Rutas de Transporte: Se emplea en la planificación de sistemas de transporte para identificar las rutas más eficientes entre diferentes puntos, minimizando el tiempo de viaje y los costos asociados. 
+PERSONALES.UPV.ES
+
+Bioinformática: El algoritmo se aplica en el análisis de estructuras moleculares para calcular la distancia más corta entre átomos dentro de una molécula, lo que es útil en el estudio de interacciones moleculares y la predicción de estructuras. 
+MEDIUM.COM
+
+Optimización de Redes Logísticas: En la gestión de cadenas de suministro, el algoritmo ayuda a determinar las rutas óptimas para la distribución de productos, contribuyendo a la reducción de costos y tiempos de entrega. 
+CIENCIAINTELIGENTE.COM
+
+Estas aplicaciones demuestran la versatilidad del algoritmo de Floyd-Warshall en la resolución de problemas complejos en diferentes áreas.
