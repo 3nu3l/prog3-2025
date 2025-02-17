@@ -1,3 +1,19 @@
+/*
+ * UADE Programación 3
+Curso intensivo verano 2025
+
+Consignas del trabajo práctico ( forma parte del segundo parcial, otorgando 2 puntos )
+En base al ejemplo que está en el repo, crear dos nodos con un tema a elección del equipo.
+Luego realizar:
+1. Crear una base de datos en neo4j y un api backend con un put y un get (0.8 puntos)
+2. Realizar un recorrido usando backtracking (0,4 puntos)
+3. Realizar recorridos sobre grafos DFS y BFS (0,4 puntos)
+4. Utilizar ramificación y poda (0,4 puntos)
+ * 
+ * 
+ */
+
+
 import java.util.*;
 
 // Clase que representa una película
