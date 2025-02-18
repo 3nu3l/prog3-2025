@@ -3,12 +3,15 @@ package com.tpo.GrafoPeliculas.service;
 import java.util.*;
 import com.tpo.GrafoPeliculas.model.Pelicula;
 import com.tpo.GrafoPeliculas.model.Actor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.tpo.GrafoPeliculas.repository.PeliculaRepository;
 import com.tpo.GrafoPeliculas.repository.ActorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import jakarta.annotation.PostConstruct;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class GrafoPeliculas {
     @Autowired
     private PeliculaRepository peliculaRepository;
@@ -26,10 +29,18 @@ public class GrafoPeliculas {
         relaciones = new HashMap<>();
     }
 
+    @PostConstruct
+    @Transactional
+    public void inicializarGrafoEjemplo() {
+        // Removido el código de inicialización hardcodeada
+    }
+
     public void agregarPelicula(Pelicula pelicula) {
         peliculaRepository.save(pelicula);
+        if (!relaciones.containsKey(pelicula.getId())) {
+            relaciones.put(pelicula.getId(), new ArrayList<Integer>());
+        }
         peliculas.put(pelicula.getId(), pelicula);
-        relaciones.put(pelicula.getId(), new ArrayList<>());
     }
 
     public void agregarActor(Actor actor) {
@@ -128,5 +139,9 @@ public class GrafoPeliculas {
 
         visitados.remove(peliculaId);
         return false;
+    }
+
+    public List<Pelicula> obtenerTodasLasPeliculas() {
+        return peliculaRepository.findAll();
     }
 }

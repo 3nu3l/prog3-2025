@@ -1,5 +1,6 @@
 /Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/GrafoPeliculasApplication.java
 /Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/config/Neo4jConfig.java
+/Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/controller/ActorController.java
 /Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/controller/PeliculaController.java
 /Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/model/Actor.java
 /Users/emaidana/Documents/repos/uade/prog3-2025/src/main/java/com/tpo/GrafoPeliculas/model/Pelicula.java
