@@ -3,10 +3,19 @@ package com.tpo.GrafoPeliculas.service;
 import java.util.*;
 import com.tpo.GrafoPeliculas.model.Pelicula;
 import com.tpo.GrafoPeliculas.model.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.tpo.GrafoPeliculas.repository.PeliculaRepository;
+import com.tpo.GrafoPeliculas.repository.ActorRepository;
 
 @Service
 public class GrafoPeliculas {
+    @Autowired
+    private PeliculaRepository peliculaRepository;
+    
+    @Autowired
+    private ActorRepository actorRepository;
+    
     private Map<Integer, Pelicula> peliculas;
     private Map<Integer, Actor> actores;
     private Map<Integer, List<Integer>> relaciones;
@@ -18,11 +27,13 @@ public class GrafoPeliculas {
     }
 
     public void agregarPelicula(Pelicula pelicula) {
+        peliculaRepository.save(pelicula);
         peliculas.put(pelicula.getId(), pelicula);
         relaciones.put(pelicula.getId(), new ArrayList<>());
     }
 
     public void agregarActor(Actor actor) {
+        actorRepository.save(actor);
         actores.put(actor.getId(), actor);
         relaciones.put(actor.getId(), new ArrayList<>());
     }
