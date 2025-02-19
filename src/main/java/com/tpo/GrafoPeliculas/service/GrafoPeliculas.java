@@ -142,6 +142,11 @@ public class GrafoPeliculas {
     }
 
     public List<Pelicula> obtenerTodasLasPeliculas() {
-        return peliculaRepository.findAll();
+        try {
+            return peliculaRepository.findAll();
+        } catch (Exception e) {
+            System.err.println("Error al obtener las películas: " + e.getMessage());
+            return Collections.emptyList(); // Retorna una lista vacía en caso de error
+        }
     }
 }
