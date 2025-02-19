@@ -1,0 +1,22 @@
+inicializar saldo_inicial
+lista_nodos = [nodo1, nodo2, ..., nodoN]
+
+mientras lista_nodos no esté vacía:
+    nodo_seleccionado = null
+    max_cobro = -infinito
+
+    para cada nodo en lista_nodos:
+        si nodo.cobro > max_cobro y saldo_inicial + nodo.cobro >= 0:
+            max_cobro = nodo.cobro
+            nodo_seleccionado = nodo
+
+    si nodo_seleccionado es null:
+        imprimir "No hay más opciones viables"
+        salir del bucle
+
+    visitar nodo_seleccionado
+    saldo_inicial += nodo_seleccionado.cobro
+    convertir saldo_inicial a dólares según la tasa de cambio actual
+    eliminar nodo_seleccionado de lista_nodos
+
+imprimir "Recorrido completado con éxito"
