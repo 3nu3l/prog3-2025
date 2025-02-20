@@ -1,0 +1,21 @@
+inicializar monto_inicial
+lista_sucursales = [sucursal1, sucursal2, ..., sucursalN]
+
+mientras lista_sucursales no esté vacía:
+    sucursal_seleccionada = null
+    max_cobro = -infinito
+
+    para cada sucursal en lista_sucursales:
+        si sucursal.cobro > max_cobro y monto_inicial + sucursal.cobro >= 0:
+            max_cobro = sucursal.cobro
+            sucursal_seleccionada = sucursal
+
+    si sucursal_seleccionada es null:
+        imprimir "No hay más opciones viables"
+        salir del bucle
+
+    visitar sucursal_seleccionada
+    monto_inicial += sucursal_seleccionada.cobro
+    eliminar sucursal_seleccionada de lista_sucursales
+
+imprimir "Recorrido completado con éxito"
