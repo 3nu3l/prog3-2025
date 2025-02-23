@@ -1,0 +1,58 @@
+1. Ejemplos de Acciones Posibles del Atacante
+
+Inyección SQL: Intentar acceder a la base de datos a través de consultas maliciosas.
+Fuerza bruta: Probar múltiples combinaciones de credenciales hasta obtener acceso.
+Cross-Site Scripting (XSS): Inyectar scripts maliciosos en la web para robar información.
+Denegación de Servicio (DoS/DDoS): Sobrecargar el servidor con solicitudes masivas.
+Escaneo de vulnerabilidades: Usar herramientas automatizadas para descubrir fallos en el sistema.
+Privilege Escalation: Explotar fallos en permisos para obtener acceso de administrador.
+
+2. Funciones del Sistema de Detección
+El sistema de detección de ataques puede utilizar diversas técnicas para identificar y mitigar estas amenazas:
+
+Análisis de patrones y firmas: Detectar tráfico inusual basado en firmas de ataques conocidos.
+Sistemas de detección de intrusos (IDS): Monitorear tráfico y eventos sospechosos en tiempo real.
+Limitación de solicitudes (Rate Limiting): Evitar ataques de fuerza bruta y DDoS.
+Filtrado de entrada (Input Validation): Proteger contra inyección SQL y XSS.
+Autenticación multifactor (MFA): Mitigar ataques de credenciales robadas.
+Monitoreo de logs: Analizar intentos fallidos de acceso y alertar sobre patrones sospechosos.
+3. Aplicación de la Poda Alfa-Beta
+La poda alfa-beta es una técnica utilizada en búsqueda minimax para reducir el número de nodos evaluados en un árbol de decisión, permitiendo descartar evaluaciones innecesarias.
+
+En el contexto del sistema de detección de ataques:
+
+Nodo raíz: Representa el estado inicial del sistema web.
+Ramas: Acciones posibles del atacante (inyección SQL, fuerza bruta, etc.).
+Niveles intermedios: Estrategias de detección que el sistema puede tomar en respuesta a cada ataque.
+Nodos hoja: Resultado final (ataque bloqueado o ataque exitoso).
+Cada nodo tiene un valor de riesgo, donde:
+
+α (alfa) representa el peor caso para el atacante (mejor caso para el sistema de defensa).
+β (beta) representa el peor caso para el sistema de defensa (mejor caso para el atacante).
+Si el sistema ya detectó que una ruta llevará a un resultado ineficaz (alto riesgo), puede poda esa rama y no continuar explorándola.
+
+4. Árbol de Decisión Simplificado
+Voy a construir un árbol de decisión representando un ataque de fuerza bruta, con decisiones del atacante y respuestas del sistema.
+
+plaintext
+Copiar
+Editar
+                     [Inicio del Ataque]
+                          |
+        -----------------------------------
+        |               |                 |
+  [Intento 1]     [Intento 2]      [Intento 3]
+      |               |                 |
+  [Bloqueado]   [Continuar]   [Límite Alcanzado]
+                     |                 |
+                  [Más Intentos]   [IP Baneada]
+                     |                 |
+           [Contraseña Encontrada]   [Ataque Fallido]
+           
+Explicación del Árbol
+El atacante inicia un ataque de fuerza bruta.
+Cada intento de contraseña tiene una respuesta del sistema:
+Puede ser bloqueado inmediatamente si el sistema detecta una actividad sospechosa.
+Puede permitir más intentos hasta que se alcance un umbral crítico.
+Si se llega al límite de intentos, la IP del atacante puede ser baneada.
+Si la poda alfa-beta detecta que un ataque no será exitoso, no continúa explorando más intentos (por ejemplo, si MFA está activado).
