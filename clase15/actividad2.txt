@@ -1,0 +1,25 @@
+Para 15 ciudades existen 43.589.145.600 rutas posibles.
+
+Métodos heurísticos para el TSP
+Debido a que el número de rutas crece de manera factorial, resolver el TSP de forma exacta se vuelve impracticable para instancias grandes. Por ello, se emplean heurísticas que buscan soluciones aproximadas en un tiempo razonable. Algunos de los métodos heurísticos indicados en la página de Wikipedia son:
+
+Algoritmo del Vecino Más Cercano (Nearest Neighbor):
+Se parte de una ciudad inicial y, en cada paso, se elige la ciudad no visitada más cercana.
+
+Ventaja: Es rápido y fácil de implementar.
+Desventaja: Puede quedar atrapado en soluciones subóptimas (óptimos locales).
+Algoritmo de Inserción:
+Se construye la ruta de forma incremental. En cada iteración se inserta la ciudad que cause el menor incremento en la distancia total del recorrido.
+
+Variantes: Inserción más barata, inserción más lejana, entre otras.
+Algoritmos de Mejora Local (como 2-opt, 3-opt, etc.):
+A partir de una solución inicial, se realizan intercambios de segmentos de la ruta (por ejemplo, eliminando cruces de aristas) para mejorar la solución de forma iterativa.
+
+Ejemplo: El 2-opt consiste en eliminar dos aristas y reconectar las rutas de modo que se reduzca la distancia total.
+Enfriamiento Simulado (Simulated Annealing):
+Se inspira en el proceso físico de enfriamiento de metales, permitiendo en algunas iteraciones aceptar soluciones peores con cierta probabilidad para escapar de óptimos locales. Con el tiempo, esta probabilidad disminuye, lo que guía al algoritmo hacia una solución aproximada de buena calidad.
+
+Algoritmo de Colonia de Hormigas (Ant Colony Optimization):
+Este método se basa en el comportamiento de las hormigas al buscar alimentos. Las "hormigas" virtuales exploran el grafo y depositan feromonas en las rutas, de modo que las rutas que históricamente han resultado más cortas son favorecidas en las iteraciones siguientes.
+
+Estos métodos heurísticos no garantizan encontrar la solución óptima, pero permiten obtener soluciones de alta calidad en tiempos computacionales mucho más reducidos, lo que resulta fundamental para aplicaciones prácticas.
