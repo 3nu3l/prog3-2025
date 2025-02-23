@@ -1,0 +1,59 @@
+1. ¿Cómo funciona el backtracking en este problema?
+El algoritmo coloca reinas una por una, fila por fila, asegurando que no se ataquen entre sí. Si en una fila no se puede colocar una reina sin violar las reglas, el algoritmo retrocede (backtracking) y prueba una nueva posición en la fila anterior.
+
+Pasos principales:
+Intenta colocar una reina en cada columna de la fila actual.
+Usa isSafe() para verificar si la posición es válida.
+Si encuentra una posición válida, coloca la reina y pasa a la siguiente fila.
+Si en alguna fila no hay posiciones válidas, deshace la última colocación y prueba otra opción en la fila anterior.
+Se repite el proceso hasta completar las N reinas o descartar una configuración inválida.
+
+2. ¿Qué pasa cuando el algoritmo encuentra una solución?
+Cuando row == N, significa que todas las reinas han sido colocadas correctamente en el tablero sin atacarse entre sí. En ese caso: ✅ Devuelve true y finaliza la ejecución. ✅ Se imprime la solución con printBoard(board).
+
+3️. ¿Qué ocurre cuando no puede colocar más reinas?
+Si en una fila row no hay ninguna columna válida para colocar una reina: 🔹 Se activa el backtracking:
+
+El algoritmo regresa a la fila anterior y deshace la última colocación (board[row-1][col] = 0).
+Prueba otra columna en esa fila anterior.
+Si no hay más opciones en esa fila, sigue retrocediendo hasta encontrar otra alternativa.
+Si después de todas las pruebas no hay solución posible, el algoritmo retorna false.
+
+4️. ¿Qué sucede en el código cuando el algoritmo "retrocede"?
+Cuando solve(board, row + 1) devuelve false, significa que no hay forma de completar la solución desde esa colocación. Entonces:
+
+Se descoloca la última reina (board[row][col] = 0).
+Se prueba la siguiente columna en la misma fila.
+Si no hay más columnas válidas, se retrocede a la fila anterior y se intenta cambiar su colocación.
+5️. ¿Cómo se visualiza en Python Tutor?
+En Python Tutor, se observa cómo el algoritmo:
+
+Va avanzando fila por fila colocando reinas.
+Cuando no puede seguir, retrocede a la fila anterior y cambia la ubicación de la última reina colocada.
+Cuando encuentra una solución, deja de hacer cambios y la imprime.
+Si no encuentra soluciones válidas, el tablero queda vacío.
+🔍 Efecto visual: Se ven las llamadas recursivas acumulándose en la pila y luego eliminándose al retroceder.
+
+6️. ¿Qué modificaciones harías para aumentar N a 8?
+Simplemente cambiar N = 8 en el código.
+
+java
+Copiar
+Editar
+private static final int N = 8;
+Esto expande el tablero a 8x8 y permite colocar 8 reinas.
+
+>> Impacto en el tiempo de ejecución:
+
+Aumentar N de 6 a 8 incrementa exponencialmente el número de combinaciones a probar.
+Para N=8, hay 4.4 × 10^7 posibles configuraciones, pero el backtracking reduce drásticamente la cantidad de intentos al evitar soluciones inválidas.
+
+7️. ¿Por qué el método isSafe es crucial en este algoritmo?
+  - isSafe(board, row, col) filtra posiciones inválidas antes de colocar una reina.
+  - Sin esta verificación, el algoritmo probaría todas las combinaciones posibles (O(N^N)), en lugar de solo las prometedoras.
+  - Reduce el tiempo de ejecución al evitar caminos sin solución.
+
+>> Funciones clave de isSafe:
+Evita conflictos en la misma columna.
+Evita ataques en diagonales.
+Permite que el backtracking explore solo opciones válidas.
